@@ -1,0 +1,10 @@
+<launch>
+    
+
+    <include file="$(find inspection)/launch/start_turtle.launch"/>
+    <include file="$(find inspection)/launch/navigation_demo.launch"/>
+    <!-- 加载节点 -->
+    <node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+    <node pkg="inspection" type="inspection_control.py" name="inspection_control" launch-prefix="xterm -e"/>
+    <node pkg="inspection" type="door_detect" name="door_detect" launch-prefix="xterm -e"/>
+</launch>

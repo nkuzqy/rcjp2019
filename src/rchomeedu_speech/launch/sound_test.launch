@@ -1,0 +1,11 @@
+<!-- 
+This launch file runs the sound_play node and a test script that excersises
+most of its functionality.
+-->
+
+<launch>
+  <include file="$(find rchomeedu_speech)/launch/lm.launch">
+  </include>
+  <node name="human_detector" pkg="rchomeedu_speech" type="human_detector.py" launch-prefix="xterm -e" output="screen"/>
+  <node name="talkback" pkg="rchomeedu_speech" type="talkback.py" launch-prefix="xterm -e" output="screen"/>
+</launch>

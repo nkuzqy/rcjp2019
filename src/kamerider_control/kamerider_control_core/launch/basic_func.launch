@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find kamerider_control_core)/launch/start_turtle.launch"/>
+    <include file="$(find kamerider_navigation_core)/launch/navigation_demo.launch"/>
+    <!-- 加载节点 -->
+    <node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+    <node pkg="kamerider_control_core" type="basic_functionalities_control.py" name="basic_functionalities_control" launch-prefix="xterm -e" />
+    <node pkg="turtlebot_arm_moveit_demos" type="moveit_fk_demos.py" name="moveit_fk_demos" launch-prefix="xterm -e" />
+    
+</launch>
